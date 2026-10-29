@@ -26,7 +26,6 @@ public class Matriser {
 			temp_teskt = temp_teskt.trim();
 			tekst += temp_teskt +"\n";
 		}
-
 		return tekst;
 	}
 
@@ -44,9 +43,7 @@ public class Matriser {
 				ny_matrise[i][y] = matrise[i][y] * tall;
 			}
 		}
-
 		return ny_matrise;
-	
 	}
 
 	// d)
@@ -80,29 +77,21 @@ public class Matriser {
 			ny_matrise[i] = new int[matrise.length];
 		}
 
-		/*
-		{0, 0, 1, 1, 1, 1, 0, 0},
-		{0, 1, 0, 0, 0, 0, 1, 0},
-		{0, 1, 0, 0, 0, 0, 1, 0},
-		{0, 0, 1, 1, 1, 1, 0, 0},
-		{0, 1, 0, 0, 0, 0, 1, 0},
-		{0, 1, 0, 0, 0, 0, 1, 0},
-		{0, 0, 1, 1, 1, 1, 0, 0}
-		 */
-
 		for (int i = 0; i < ny_matrise.length; i++){
 			for (int y = 0; y < ny_matrise[0].length; y++) {
 				ny_matrise[i][y] = matrise[y][i];
 			}
 		}
-
 		return ny_matrise;
-	
 	}
 
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
+
+		if (a[0].length != b.length) {
+			throw new UnsupportedOperationException("Matriks A sin rekke størrelse må være det same som matriks b sin rad størrelse");
+		}
 
 		int[][] ny_matrise = new int[a.length][b[0].length];
 
@@ -117,7 +106,6 @@ public class Matriser {
 				ny_matrise[p][m] = celle_total;
 			}
 		}
-
 		return ny_matrise;
 	}
 }
